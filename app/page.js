@@ -8,14 +8,49 @@ import { generatePDF } from '../utils/pdf';
 import '../styles/github.css';
 
 export default function Page() {
-  const [markdown, setMarkdown] = useState(`# Título de ejemplo
+  const [markdown, setMarkdown] = useState(`# Project Overview
 
-Escribe tu Markdown aquí. Puedes usar **negritas**, _cursivas_, tablas y código.
+Welcome to **Markdown to PDF**! This editor lets you write Markdown and instantly generate a PDF with GitHub-style formatting.
 
-- Lista
-- Con
-- Varias
-- Líneas
+## Features
+
+- Real-time preview
+- GitHub-style rendering
+- Fast PDF generation on the client
+- Works entirely in your browser
+
+## Example Usage
+
+Here is some sample Markdown:
+
+### Installation
+
+\`\`\`bash
+npm install mdsnap
+\`\`\`
+
+### Sample Table
+
+| Feature             | Status       |
+|--------------------|-------------|
+| Real-time Preview   | ✅ Completed |
+| PDF Generation      | ✅ Completed |
+| GitHub Styling      | ✅ Completed |
+| Client-side Only    | ✅ Completed |
+
+### Code Snippet
+
+\`\`\`javascript
+function greet(name) {
+  console.log(\`Hello, \${name}!\`);
+}
+greet("World");
+\`\`\`
+
+### Notes
+
+> Remember to save your work frequently!
+> Markdown is powerful and flexible.
 `);
 
   useEffect(() => {
