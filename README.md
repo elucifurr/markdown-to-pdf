@@ -53,4 +53,4 @@ yarn dev
 
 ## License
 
-MIT License
+MIT License. See the [LICENSE](./LICENSE) file for details.
