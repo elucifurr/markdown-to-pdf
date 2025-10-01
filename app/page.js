@@ -38,6 +38,11 @@ npm install mdsnap
 | GitHub Styling      | ✅ Completed |
 | Client-side Only    | ✅ Completed |
 
+### Task List
+
+- [x] Completed task
+- [ ] Incompleted task
+
 ### Code Snippet
 
 \`\`\`javascript
@@ -64,19 +69,15 @@ greet("World");
 
   return (
     <main className="flex flex-col h-screen p-6 box-border">
-      {/* Header */}
       <Header onGeneratePDF={() => generatePDF(markdown)} />
 
-      {/* Contenedor principal con altura fija */}
       <div className="flex flex-col md:flex-row gap-4 h-[calc(100vh-5rem)] pb-2">
-        {/* Editor */}
         <MarkdownEditor
           markdown={markdown}
           setMarkdown={setMarkdown}
           className="w-full md:w-2/5 h-full overflow-auto border rounded p-4"
         />
 
-        {/* Preview */}
         <MarkdownPreview
           markdown={markdown}
           className="w-full md:w-3/5 h-full overflow-auto border rounded p-4"

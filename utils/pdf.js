@@ -1,17 +1,22 @@
-import { marked } from 'marked';
+import { marked } from "marked";
 
 export function generatePDF(markdown) {
   if (!window.html2pdf) {
-    alert('html2pdf todavía no está cargado');
+    alert("html2pdf todavía no está cargado");
     return;
   }
 
-  const element = document.createElement('div');
-  element.className = 'markdown-body pdf-preview';
+  const element = document.createElement("div");
+  element.className = "markdown-body pdf-preview";
   element.innerHTML = marked.parse(markdown);
   document.body.appendChild(element);
 
-  const style = document.createElement('style');
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "/styles/github-markdown-light.css";
+  document.head.appendChild(link);
+
+  const style = document.createElement("style");
   style.innerHTML = `
     .pdf-preview {
       padding: 2em !important;
@@ -41,14 +46,15 @@ export function generatePDF(markdown) {
     .from(element)
     .set({
       margin: 10,
-      filename: 'documento.pdf',
+      filename: "document.pdf",
       html2canvas: { scale: 2, scrollY: 0 },
-      jsPDF: { orientation: 'portrait', unit: 'pt', format: 'a4' },
-      pagebreak: { mode: ['css', 'legacy'] }
+      jsPDF: { orientation: "portrait", unit: "pt", format: "a4" },
+      pagebreak: { mode: ["css", "legacy"] },
     })
     .save()
     .finally(() => {
       document.body.removeChild(element);
+      document.head.removeChild(link);
       document.head.removeChild(style);
     });
 }
