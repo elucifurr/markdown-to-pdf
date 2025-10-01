@@ -21,7 +21,7 @@ Convert your Markdown into a **GitHub-style PDF** instantly, right in your brows
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/mdsnap.git
+git clone https://github.com/elucifurr/mdsnap.git
 ```
 
 2. Istall dependencies
